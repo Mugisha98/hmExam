@@ -15,6 +15,6 @@ public class SupervisorController {
     public String allSupervisors(Model model){
         model.addAttribute("supervisorsToBeReturned",iSupervisorRepository.findAll());
 
-        return "supervisors";
+        return "overview-supervisors";
     }
 }

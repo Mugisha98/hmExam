@@ -56,10 +56,13 @@ public class Student {
     public void setEmail(String email) {
         this.email = email;
     }
-
+    //Used for getting Supervisor id in student Table
     public Long getSupervisorId() {
         return supervisor.getId();
     }
+
+    //Used for getting name of supervisor in student table
+    public String getSupervisorName(){return supervisor.getFirstName();}
 
     public void setSupervisor(Supervisor supervisor) {
         this.supervisor = supervisor;

@@ -17,7 +17,12 @@
     <input type="text" class="form-control" id="lastName" th:field="*{lastName}"  placeholder="Last name..."/>
     <br/>
     <label for="email">Email</label>
+    <div class="input-group mb-2">
+    <div class="input-group-prepend">
+        <div class="input-group-text">@</div>
+    </div>
     <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Email..."/>
+    </div>
     <br/>
     <div class="form-group">
         <label id="dropdown" for="dropdown">Supervisor</label>

@@ -19,7 +19,12 @@
             <input class="form-control" id="lastName" type="text" th:field="*{studentToBeUpdated.lastName}" required>
             <br/>
             <label for="email">Email</label>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                </div>
             <input class="form-control" id="email" type="email" th:field="*{studentToBeUpdated.email}" required>
+            </div>
             <br/>
             <div class="form-group">
                 <select id="select" class="form-control" th:field="*{studentToBeUpdated.supervisor}" required>
