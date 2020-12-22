@@ -8,9 +8,10 @@ import java.util.List;
 public class Supervisor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) //AutoGenerates an unique ID
     private Long id;
 
+    //Column names in the DB
     @Column(name = "supervisor_first_name")
     private String firstName;
     @Column(name = "supervisor_last_name")
@@ -18,7 +19,8 @@ public class Supervisor {
     @Column(name = "supervisor_email")
     private String email;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy="supervisor")
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy="supervisor")  //mappedBy attribute to define this inverse relation.
     private List<Student> studentList;
 
     //Getter

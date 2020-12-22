@@ -9,9 +9,10 @@ import javax.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//AutoGenerates an unique ID
     private Long id;
 
+    //Column names in the DB
     @Column(name = "student_first_name")
     private String firstName;
     @Column(name = "student_last_name")
@@ -20,8 +21,8 @@ public class Student {
     private String email;
 
 
-    @ManyToOne
-    @JoinColumn(name = "supervisor_id")
+    @ManyToOne //One student has many supervisors
+    @JoinColumn(name = "supervisor_id") //specifies how the relationship should be mapped to the database
     private Supervisor supervisor;
 
 
