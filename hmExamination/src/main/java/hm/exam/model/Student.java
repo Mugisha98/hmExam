@@ -25,51 +25,42 @@ public class Student {
     @JoinColumn(name = "supervisor_id") //Which column to join the entities(Students & Supervisors)
     private Supervisor supervisor;
 
-
+    //Getter
     public Long getId() {
         return id;
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
     }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
     }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getEmail() {
         return email;
     }
+    public Long getSupervisorId() {
+        return supervisor.getId();
+    }  //Used for getting Supervisor id in student Table
+    public String getSupervisorName(){return supervisor.getFirstName();} //Used for getting name of supervisor in student table
+    public Supervisor getSupervisor() {
+        return supervisor;
+    }
 
+    //Setter
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
     public void setEmail(String email) {
         this.email = email;
     }
-    //Used for getting Supervisor id in student Table
-    public Long getSupervisorId() {
-        return supervisor.getId();
-    }
-
-    //Used for getting name of supervisor in student table
-    public String getSupervisorName(){return supervisor.getFirstName();}
-
     public void setSupervisor(Supervisor supervisor) {
         this.supervisor = supervisor;
     }
 
-    public Supervisor getSupervisor() {
-        return supervisor;
-    }
 }
