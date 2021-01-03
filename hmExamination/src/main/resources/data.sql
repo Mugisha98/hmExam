@@ -1,3 +1,5 @@
+-- Gonna execute the SQL queries when the application runs.
+
 INSERT INTO Supervisors(id,supervisor_first_name,supervisor_last_name,supervisor_email)
 VALUES (1,'Richard', 'Schaefer','rs@kea.dk'),
        (2,'Jesse', 'Proctor','js@kea.dk'),
