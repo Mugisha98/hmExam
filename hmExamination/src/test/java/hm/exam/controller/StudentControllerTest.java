@@ -13,7 +13,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class StudentControllerTest {
 
-
+    // Instancere
     Student student;
 
     @InjectMocks // creates objects and inject mocked dependencies
@@ -25,10 +25,13 @@ class StudentControllerTest {
 
     @BeforeEach //
     void setUp(){
-        student = new Student();
+        student = new Student(); //Decleared the instance
     }
 
-
+    @Test
+    void createdStudent() {
+        Assertions.assertEquals("successful", studentController.createdStudent(student));
+    }
 
     @Test
     void studentOverview() {
@@ -41,10 +44,6 @@ class StudentControllerTest {
     }
 
 
-    @Test
-    void createdStudent() {
-        Assertions.assertEquals("successful", studentController.createdStudent(new Student()));
-    }
 
     @Test
     void editStudent() {

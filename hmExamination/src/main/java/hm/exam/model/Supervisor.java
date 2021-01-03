@@ -3,11 +3,11 @@ package hm.exam.model;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
+@Entity //Map this class to DB
 @Table(name = "Supervisors")
 public class Supervisor {
 
-    @Id
+    @Id //Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY) //AutoGenerates an unique ID
     private Long id;
 
@@ -19,7 +19,7 @@ public class Supervisor {
     @Column(name = "supervisor_email")
     private String email;
 
-
+    //One supervisor to many students
     @OneToMany(cascade = CascadeType.ALL, mappedBy="supervisor")  //mappedBy attribute to define this inverse relation.
     private List<Student> studentList;
 

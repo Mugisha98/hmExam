@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @JsonIgnoreProperties({"supervisor","id"})
-@Entity
+@Entity //Map this class to DB
 @Table(name = "Students")
 public class Student {
 
-    @Id
+    @Id //Primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)//AutoGenerates an unique ID
     private Long id;
 
@@ -21,8 +21,8 @@ public class Student {
     private String email;
 
 
-    @ManyToOne //One student has many supervisors
-    @JoinColumn(name = "supervisor_id") //specifies how the relationship should be mapped to the database
+    @ManyToOne //Many supervisors to one student
+    @JoinColumn(name = "supervisor_id") //Which column to join the entities(Students & Supervisors)
     private Supervisor supervisor;
 
 
