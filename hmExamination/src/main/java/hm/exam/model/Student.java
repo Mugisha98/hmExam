@@ -40,8 +40,8 @@ public class Student {
     }
     public Long getSupervisorId() {
         return supervisor.getId();
-    }  //Used for getting Supervisor id in student Table
-    public String getSupervisorName(){return supervisor.getFirstName();} //Used for getting name of supervisor in student table
+    } //Used for getting Supervisor id in student Table todo:udkommentere metoden til postman
+    public String getSupervisorName(){return supervisor.getFirstName();} //Used for getting name of supervisor in student table todo:udkommentere metoden til postman
     public Supervisor getSupervisor() {
         return supervisor;
     }

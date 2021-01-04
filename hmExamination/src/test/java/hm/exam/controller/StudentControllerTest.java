@@ -16,16 +16,15 @@ class StudentControllerTest {
     // Instancere
     Student student;
 
-    @InjectMocks // creates objects and inject mocked dependencies
+    @InjectMocks //creates objects and inject mocked dependencies
     StudentController studentController;
 
     @Mock //To create mock object for IStudentRepository dependency instead of calling the real Repository
     IStudentRepository iStudentRepository;
 
-
-    @BeforeEach //
+    @BeforeEach //Before doing anything do this
     void setUp(){
-        student = new Student(); //Decleared the instance
+        student = new Student(); //Declared the instance
     }
 
     @Test
@@ -33,25 +32,4 @@ class StudentControllerTest {
         Assertions.assertEquals("successful", studentController.createdStudent(student));
     }
 
-    @Test
-    void studentOverview() {
-        //Assertions.assertEquals("overview-student", studentController.studentOverview());
-    }
-
-    @Test
-    void createStudent() {
-        //Assertions.assertEquals("create-student", studentController.createStudent());
-    }
-
-
-
-    @Test
-    void editStudent() {
-
-        Assertions.assertEquals(4,2+2);
-    }
-
-    @Test
-    void studentUpdated() {
-    }
 }
