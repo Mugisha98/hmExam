@@ -25,13 +25,11 @@ public class PostmanController {
         // ResponseEntity constructor expects parameters as status(), header() and body()
         return  ResponseEntity.status(201).header("Location","/students/" + student.getId()).body("{'Msg': "+student.getFirstName()+"'student created'}");
     }
-
     //Read all students
     @GetMapping("/students")
     public Iterable<Student> index(){
         return studentRepository.findAll();
     }
-
     //Read student by id
     @GetMapping("/students/{id}")
     public ResponseEntity<Optional<Student>> findById(@PathVariable Long id){
@@ -42,18 +40,17 @@ public class PostmanController {
             return ResponseEntity.status(404).body(response);
         }
     }
-
-    //delete by id
-    @DeleteMapping("/students/{id}")
-    public ResponseEntity<String> delete(@PathVariable Long id){
-        studentRepository.deleteById(id);
-        return ResponseEntity.status(200).body("{'msg' : 'deleted'}");
-    }
-
     //Update students
     @PutMapping("/students")
     public ResponseEntity<String> update(@ModelAttribute Student studentToUpdate){
         studentRepository.save(studentToUpdate);
         return ResponseEntity.status(204).body("{'msg':'success!'}");
     }
+    //Delete by id
+    @DeleteMapping("/students/{id}")
+    public ResponseEntity<String> delete(@PathVariable Long id){
+        studentRepository.deleteById(id);
+        return ResponseEntity.status(200).body("{'msg' : 'deleted'}");
+    }
+
 }

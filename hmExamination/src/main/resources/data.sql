@@ -15,8 +15,6 @@ INSERT INTO Students(id,student_first_name,student_last_name,student_email,super
 VALUES (1,'Ryan', 'Fenster','ryan2014@stud.kea.dk',1),
        (2,'Cornelius','Jackson','Corn0149@stud.kea.dk',2),
        (3,'Hugh','Jass','hugh2345@stud.kea.dk',5),
-       (4,'Mark','Itch','mark2058@stud.kea.dk',5),
+       (4,'Simone','Brown','simo2090@stud.kea.dk',5),
        (5,'Jeniffer','Mohde','jenni8859@stud.kea.dk',10),
-       (6,'Tanner','Ohio','tann2049@stud.kea.dk',9),
-       (7,'Melissa','Minaj','meli4452@stud.kea.dk',10),
-       (8,'Simone','Jew','simo2090@stud.kea.dk',9);
+       (6,'Melissa','Minaj','meli4452@stud.kea.dk',10);

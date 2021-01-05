@@ -1,5 +1,6 @@
 package hm.exam.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
@@ -38,13 +39,15 @@ public class Student {
     public String getEmail() {
         return email;
     }
+    @JsonIgnore
     public Long getSupervisorId() {
         return supervisor.getId();
-    } //Used for getting Supervisor id in student Table todo:udkommentere metoden til postman
-    public String getSupervisorName(){return supervisor.getFirstName();} //Used for getting name of supervisor in student table todo:udkommentere metoden til postman
+    } //Used for getting Supervisor id in student Table
+    @JsonIgnore
+    public String getSupervisorName(){return supervisor.getFirstName();} //Used for getting name of supervisor in student table
     public Supervisor getSupervisor() {
         return supervisor;
-    }
+    } //Returns an object for StudentController class to use
 
     //Setter
     public void setId(Long id) {
