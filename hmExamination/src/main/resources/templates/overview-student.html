@@ -15,14 +15,14 @@
             <th>First name</th>
             <th>Last name</th>
             <th>Email</th>
-            <th># Supervisor</th>
+            <th>Supervisor</th>
             <th></th>
         </thead>
         <tr th:each="s : ${studentsToReturn}">
             <td th:text="${s.firstName}"></td>
             <td th:text="${s.lastName}"></td>
             <td th:text="${s.email}"></td>
-            <td th:text="${s.supervisorId}+' || '+${s.supervisorName}"></td>
+            <td th:text="'#'+${s.supervisorId}+' '+${s.supervisorName}"></td>
             <td>
                 <a th:href="@{/edit-student/{id}(id=${s.id})}" class="btn btn-outline-warning" role="button">Update</a>
                 <a th:href="@{/delete-student/{id}(id=${s.id})}" class="btn btn-outline-danger" role="button">Delete</a>

@@ -32,7 +32,7 @@ public class StudentController {
     public String createStudent(Model model){
         Student student = new Student(); //instantiate
         model.addAttribute("studentToBeInserted", student);
-        //find the supervisor by id and then create the student with the supervisor_id
+        //find the supervisor by id to create a student with the a supervisor_id
         model.addAttribute("selectSupervisor", iSupervisorRepository.findAll());
         return "create-student";
     }
