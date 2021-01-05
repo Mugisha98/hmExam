@@ -3,7 +3,7 @@ package hm.exam.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
+@Controller //Returns view
 public class HomeController {
 
     @GetMapping("/")

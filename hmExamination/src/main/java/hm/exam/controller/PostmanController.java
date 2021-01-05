@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@RestController //@RestController used to make REST API request and return data in JSON or XML
+@RestController //@RestController used to make REST API request and return data in JSON or XML (combi @ResponseBody and @Controller)
 public class PostmanController {
 
     //Todo: Use this for postman
@@ -22,7 +22,8 @@ public class PostmanController {
     @PostMapping("/students")
     public  ResponseEntity<String> create(@ModelAttribute Student studentToCreate){
         Student student = studentRepository.save(studentToCreate);
-        return  ResponseEntity.status(201).header("Location","/students/" + student.getId()).body("{'Msg': 'student created'}");
+        // ResponseEntity constructor expects parameters as status(), header() and body()
+        return  ResponseEntity.status(201).header("Location","/students/" + student.getId()).body("{'Msg': "+student.getFirstName()+"'student created'}");
     }
 
     //Read all students

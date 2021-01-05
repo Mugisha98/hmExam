@@ -1,6 +1,7 @@
 package hm.exam.controller;
 
 
+import com.sun.xml.bind.v2.runtime.output.SAXOutput;
 import hm.exam.model.Student;
 import hm.exam.repository.IStudentRepository;
 import org.junit.jupiter.api.Assertions;
@@ -13,7 +14,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class StudentControllerTest {
 
-    // Instancere
+    //Instantiate
     Student student;
 
     @InjectMocks //creates objects and inject mocked dependencies
@@ -30,6 +31,7 @@ class StudentControllerTest {
     @Test
     void createdStudent() {
         Assertions.assertEquals("successful", studentController.createdStudent(student));
+        System.out.println("Test completed!");
     }
 
 }

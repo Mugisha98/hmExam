@@ -5,13 +5,14 @@
     <title>Programming 2 Exam</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
+    <script src="/static/js/index.js"></script>
 </head>
 <body>
     <div class="greetingHeader">
         <h1 style="text-align: center">Welcome to student administration</h1><br>
     </div>
     <div>
-        <a href="/student-overview"><button id="studentBtn" type="button" class="btn btn-primary btn-lg btn-block">Students</button></a>
+        <a href="/student-overview"><button id="studentBtn" type="button" class="btn btn-primary btn-lg btn-block" onclick="captcha()">Students</button></a>
     </div>
     <div style="margin-top: 2%">
         <a href="/supervisor-overview"><button id="supervisorBtn" type="button" class="btn btn-secondary btn-lg btn-block">Supervisors</button></a>
@@ -19,5 +20,18 @@
     <div class="card-footer text-muted">
         <p>Made by with 🖤 by HMTech Inc</p>
     </div>
+<script>
+    function captcha(){
+        let a = Math.floor(Math.random()*100);
+        let b = Math.floor(Math.random()*100);
+        let mathQuiz = window.prompt("Confirm you're not a robot by answering"+"\n\t\t\t"+a+" + "+b);
+        let result = a + b;
+        if(parseInt(mathQuiz) === result){
+            return console.log(result);
+        }else{
+            return mathQuiz;
+        }
+    }
+</script>
 </body>
 </html>
