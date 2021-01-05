@@ -5,7 +5,7 @@
     <title>Programming 2 Exam</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
-    <script src="/static/js/index.js"></script>
+    <script src="/js/index.js"></script>
 </head>
 <body>
     <div class="greetingHeader">
@@ -20,18 +20,5 @@
     <div class="card-footer text-muted">
         <p>Made by with 🖤 by HMTech Inc</p>
     </div>
-<script>
-    function captcha(){
-        let a = Math.floor(Math.random()*100);
-        let b = Math.floor(Math.random()*100);
-        let mathQuiz = window.prompt("Confirm you're not a robot by answering"+"\n\t\t\t"+a+" + "+b);
-        let result = a + b;
-        if(parseInt(mathQuiz) === result){
-            return console.log(result);
-        }else{
-            return mathQuiz;
-        }
-    }
-</script>
 </body>
 </html>
