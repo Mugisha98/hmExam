@@ -16,16 +16,14 @@
                         <th>First name</th>
                         <th>Last name</th>
                         <th>Email</th>
-                        <th></th>
+                        <th>Students</th>
                     </thead>
                     <tr th:each="s : ${supervisorsToBeReturned}">
                         <td th:text="${s.id}"></td>
                         <td th:text="${s.firstName}"></td>
                         <td th:text="${s.lastName}"></td>
                         <td th:text="${s.email}"></td>
-                        <td>
-                           <button id="show" class="btn btn-outline-info">See all students</button>
-                        </td>
+                        <td th:text="${s.studentAmount}"></td>
                     </tr>
                 </table>
                 <a href="/student-overview"><button class="btn btn-outline-success">Back to students</button></a>
@@ -36,26 +34,5 @@
                 <p>Made by with 🖤 by HMTech Inc</p>
             </div>
         </footer>
-        <script>
-            /*
-            $(document).read(function(){
-
-                $('#show').click(function ()
-                {
-                    $.ajax(
-                        {
-                            method:"GET",
-                            URL:'http://localhost:8080/students/{id}'
-                    }).done(function (data)
-                    {
-                        let i;
-                        for(i=0; i<data.length; i++){
-                            $('').append(data[i].firstName)
-                        }
-                    });
-                })
-
-            })*/
-        </script>
     </body>
 </html>

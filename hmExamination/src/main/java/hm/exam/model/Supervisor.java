@@ -39,6 +39,9 @@ public class Supervisor {
     public List<Student> getStudentList() {
         return studentList;
     }
+    public int getStudentAmount(){
+        return studentList.size();
+    } //Returns the amounnt of students in supervisor table
 
     //Setter
     public void setId(Long id) {
