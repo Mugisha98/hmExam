@@ -2,6 +2,10 @@ package hm.exam.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import javax.persistence.*;
 
 @JsonIgnoreProperties({"supervisor","id"})
@@ -39,11 +43,11 @@ public class Student {
     public String getEmail() {
         return email;
     }
-    //@JsonIgnore //ignore the method when student is created  TODO: Udkommentere @JsonIgnore med Thymeleaf & Postman
+    @JsonIgnore //ignore the method when student is serialize & deserialize  TODO: Udkommenter @JsonIgnore med Thymeleaf & Postman
     public Long getSupervisorId() {
         return supervisor.getId();
-    } //Used for getting Supervisor id in student Table
-    //@JsonIgnore //ignore the method when student is created TODO: Udkommentere @JsonIgnore med Thymeleaf &  Postman
+    } //Used for getting Supervisor id in student Tab
+    @JsonIgnore //ignore the method when student is serialize & deserialize TODO: Udkommenter @JsonIgnore med Thymeleaf &  Postman
     public String getSupervisorName(){return supervisor.getFirstName();} //Used for getting name of supervisor in student table
     public Supervisor getSupervisor() {
         return supervisor;

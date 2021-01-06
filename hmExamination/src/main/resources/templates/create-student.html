@@ -7,40 +7,42 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body class="container">
-
-<h2>Add Student</h2>
-<form action="#" th:action="@{/create-student}" method="POST" th:object="${studentToBeInserted}">
-    <label for="firstName">First name</label>
-    <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="First name..."/>
-    <br/>
-    <label for="lastName">Last name</label>
-    <input type="text" class="form-control" id="lastName" th:field="*{lastName}"  placeholder="Last name..."/>
-    <br/>
-    <label for="email">Email</label>
-    <div class="input-group mb-2">
-    <div class="input-group-prepend">
-        <div class="input-group-text">@</div>
-    </div>
-    <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Email..."/>
-    </div>
-    <br/>
-    <div class="form-group">
-        <label id="dropdown" for="dropdown">Supervisor</label>
-        <select id="select" class="form-control" th:field="*{supervisor}" required>
-            <option th:each="supervisor : ${selectSupervisor}" th:text="${supervisor.firstName}" th:value="${supervisor.id}"></option>
-        </select>
-    </div>
-    <input type="hidden" id="id" th:field="*{id}">
-    <br/>
-    <button type="submit" class="btn btn-outline-success">Submit</button>
-    <button type="reset" class="btn btn-outline-danger">Reset</button>
-    <br>
-</form>
-<div class="card-footer text-muted">
-    <p>Made by with 🖤 by HMTech Inc</p>
-</div>
-<div class="card-footer text-muted">
-    <p>Made by with 🖤 by HMTech Inc</p>
-</div>
+    <main>
+        <h2>Add Student</h2>
+        <div>
+            <form action="#" th:action="@{/create-student}" method="POST" th:object="${studentToBeInserted}">
+                <label for="firstName">First name</label>
+                <input type="text" class="form-control" id="firstName" th:field="*{firstName}" placeholder="First name..."/>
+                <br/>
+                <label for="lastName">Last name</label>
+                <input type="text" class="form-control" id="lastName" th:field="*{lastName}"  placeholder="Last name..."/>
+                <br/>
+                <label for="email">Email</label>
+                <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                </div>
+                <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Email..."/>
+                </div>
+                <br/>
+                <div class="form-group">
+                    <label id="dropdown" for="dropdown">Supervisor</label>
+                    <select id="select" class="form-control" th:field="*{supervisor}" required>
+                        <option th:each="supervisor : ${selectSupervisor}" th:text="${supervisor.firstName}" th:value="${supervisor.id}"></option>
+                    </select>
+                </div>
+                <input type="hidden" id="id" th:field="*{id}">
+                <br/>
+                <button type="submit" class="btn btn-outline-success">Submit</button>
+                <button type="reset" class="btn btn-outline-danger">Reset</button>
+                <br>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <div class="card-footer text-muted">
+            <p>Made by with 🖤 by HMTech Inc</p>
+        </div>
+    </footer>
 </body>
 </html>

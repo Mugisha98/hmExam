@@ -1,46 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Programming 2 Exam</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body class="container">
-
-<h2>Edit Student</h2>
-<div class="form-group">
-    <form th:s="${studentToBeUpdated}" th:action="@{/edit-student}" enctype="UTF8" method="post">
-        <tr>
-            <label for="firstName">First name</label>
-            <input class="form-control" id="firstName" type="text" th:field="*{studentToBeUpdated.firstName}" required>
-            <br/>
-            <label for="lastName">Last name</label>
-            <input class="form-control" id="lastName" type="text" th:field="*{studentToBeUpdated.lastName}" required>
-            <br/>
-            <label for="email">Email</label>
-            <div class="input-group mb-2">
-                <div class="input-group-prepend">
-                    <div class="input-group-text">@</div>
-                </div>
-            <input class="form-control" id="email" type="email" th:field="*{studentToBeUpdated.email}" required>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Programming 2 Exam</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body class="container">
+        <main>
+            <div>
+                <h2>Edit Student</h2>
             </div>
-            <br/>
             <div class="form-group">
-                <select id="select" class="form-control" th:field="*{studentToBeUpdated.supervisor}" required>
-                    <option th:each="supervisor : ${selectSupervisor}" th:text="${supervisor.firstName}" th:value="${supervisor.id}"></option>
-                </select>
+                <form th:s="${studentToBeUpdated}" th:action="@{/edit-student}" enctype="UTF8" method="post">
+                    <tr>
+                        <label for="firstName">First name</label>
+                        <input class="form-control" id="firstName" type="text" th:field="*{studentToBeUpdated.firstName}" required>
+                        <br/>
+                        <label for="lastName">Last name</label>
+                        <input class="form-control" id="lastName" type="text" th:field="*{studentToBeUpdated.lastName}" required>
+                        <br/>
+                        <label for="email">Email</label>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">@</div>
+                            </div>
+                        <input class="form-control" id="email" type="email" th:field="*{studentToBeUpdated.email}" required>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <select id="select" class="form-control" th:field="*{studentToBeUpdated.supervisor}" required>
+                                <option th:each="supervisor : ${selectSupervisor}" th:text="${supervisor.firstName}" th:value="${supervisor.id}"></option>
+                            </select>
+                        </div>
+                        <input type="hidden" id="id" th:field="*{id}">
+                        <br>
+                        <button class="btn btn-outline-success" type="submit">Videre</button>
+                        <button class="btn btn-outline-danger" type="reset" >Fortryd</button>
+                    </tr>
+                </form>
             </div>
-            <input type="hidden" id="id" th:field="*{id}">
-            <br>
-            <button class="btn btn-outline-success" type="submit">Videre</button>
-            <button class="btn btn-outline-danger" type="reset" >Fortryd</button>
-        </tr>
-    </form>
-</div>
-<div class="card-footer text-muted">
-    <p>Made by with 🖤 by HMTech Inc</p>
-</div>
-
-</body>
+        </main>
+        <footer>
+        <div class="card-footer text-muted">
+            <p>Made by with 🖤 by HMTech Inc</p>
+        </div>
+        </footer>
+    </body>
 </html>

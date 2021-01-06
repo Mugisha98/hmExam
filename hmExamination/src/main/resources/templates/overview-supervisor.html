@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Programming 2 Exam</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-
-<div class="container" style="text-transform: lowercase">
-    <h3>Supervisor overview</h3>
-    <table class="table table-bordered">
-        <thead class="thead-dark">
-            <th>#</th>
-            <th>First name</th>
-            <th>Last name</th>
-            <th>Email</th>
-        </thead>
-        <tr th:each="s : ${supervisorsToBeReturned}">
-            <td th:text="${s.id}"></td>
-            <td th:text="${s.firstName}"></td>
-            <td th:text="${s.lastName}"></td>
-            <td th:text="${s.email}"></td>
-
-        </tr>
-    </table>
-    <a href="/student-overview">
-        <button class="btn btn-outline-success">Back to students</button>
-    </a>
-</div>
-<div class="card-footer text-muted">
-    <p>Made by with 🖤 by HMTech Inc</p>
-</div>
-
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Programming 2 Exam</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        <main>
+            <div class="container" style="text-transform: lowercase">
+                <h3>Supervisor overview</h3>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <th>#</th>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Email</th>
+                    </thead>
+                    <tr th:each="s : ${supervisorsToBeReturned}">
+                        <td th:text="${s.id}"></td>
+                        <td th:text="${s.firstName}"></td>
+                        <td th:text="${s.lastName}"></td>
+                        <td th:text="${s.email}"></td>
+                    </tr>
+                </table>
+                <a href="/student-overview"><button class="btn btn-outline-success">Back to students</button></a>
+            </div>
+        </main>
+        <footer>
+            <div class="card-footer text-muted">
+                <p>Made by with 🖤 by HMTech Inc</p>
+            </div>
+        </footer>
+    </body>
 </html>
