@@ -30,7 +30,7 @@ public class StudentRestController {
     public Iterable<Student> index(){
         return studentRepository.findAll();
     }
-    //Read student by id
+    //Read one student by id
     @GetMapping("/students/{id}")
     public ResponseEntity<Optional<Student>> findById(@PathVariable Long id){
         Optional<Student> response = studentRepository.findById(id);
@@ -52,5 +52,6 @@ public class StudentRestController {
         studentRepository.deleteById(id);
         return ResponseEntity.status(200).body("{'msg' : 'deleted'}");
     }
+
 
 }
