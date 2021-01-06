@@ -33,7 +33,7 @@
 <script>
     $(document).ready(function()
     {
-        //GET ALL STUDENTS function
+        //GET ALL STUDENTS
         $('#viewStudentsBtn').click(function ()
         {
             $.ajax(
@@ -47,7 +47,7 @@
                             $('<td>').text(student.firstName),
                             $('<td>').text(student.lastName),
                             $('<td>').text(student.email),
-                            $('<td>').text("#"+student.supervisorId+" "+student.supervisorName), //TODO: view data GO TO student.class
+                            $('<td>').text("#"+student.supervisorId+" "+student.supervisorName) //TODO: view data GO TO student.class
                         ).appendTo('#studentTable');
                     });
             });
