@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @RestController //@RestController used to make REST API request and return data in JSON or XML (combi @ResponseBody and @Controller)
-public class StudentRestController {
+public class StudentRESTController {
 
     //Todo: Use this for postman
 
     IStudentRepository studentRepository;
 
-    public StudentRestController(IStudentRepository iStudentRepository) {
+    public StudentRESTController(IStudentRepository iStudentRepository) {
         this.studentRepository = iStudentRepository;
     }
 
