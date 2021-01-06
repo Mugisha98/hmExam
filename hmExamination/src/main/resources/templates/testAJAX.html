@@ -38,11 +38,12 @@
                 {
                     $.ajax(
                         {
-                            method: "GET",
+                            method: "GET", //HTTP REST API Request
                             url: 'http://localhost:8080/students' //Endpoint to an local URL
                         }).done(function(data)
                     {
                         $.each(data, function(i, student) {
+                                //Append where the data gonna displayed by accessing the objects properties.
                                  $('<tr>').append(
                                     $('<td>').text(student.firstName),
                                     $('<td>').text(student.lastName),
