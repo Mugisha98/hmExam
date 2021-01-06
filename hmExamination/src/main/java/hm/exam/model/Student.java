@@ -39,11 +39,11 @@ public class Student {
     public String getEmail() {
         return email;
     }
-    @JsonIgnore //ignore the method when student is created
+    @JsonIgnore //ignore the method when student is created  TODO: Udkommentere @JsonIgnore med Thymeleaf
     public Long getSupervisorId() {
         return supervisor.getId();
     } //Used for getting Supervisor id in student Table
-    @JsonIgnore //ignore the method when student is created
+    @JsonIgnore //ignore the method when student is created TODO: Udkommentere @JsonIgnore med Thymeleaf
     public String getSupervisorName(){return supervisor.getFirstName();} //Used for getting name of supervisor in student table
     public Supervisor getSupervisor() {
         return supervisor;
