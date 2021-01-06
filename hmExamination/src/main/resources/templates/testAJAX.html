@@ -11,9 +11,11 @@
 <body>
 <main>
     <div class="greetingHeader">
-        <h1 style="text-align: center">Welcome to student administration</h1><br>
+        <br><h2>Student overview</h2>
     </div>
+    <div>
         <button id="viewStudentsBtn" class="btn btn-outline-info">Show students</button>
+    </div>
     <div>
         <table id="studentTable" class="table table-bordered">
             <thead>
@@ -37,7 +39,7 @@
             $.ajax(
                 {
                     method: "GET",
-                    url: 'http://localhost:8080/students' //Endpoint
+                    url: 'http://localhost:8080/students' //Endpoint to an local URL
                 }).done(function(data)
             {
                 $.each(data, function(i, student) {
@@ -45,7 +47,7 @@
                             $('<td>').text(student.firstName),
                             $('<td>').text(student.lastName),
                             $('<td>').text(student.email),
-                            $('<td>').text("#"+student.supervisorId+" "+student.supervisorName),
+                            $('<td>').text("#"+student.supervisorId+" "+student.supervisorName), //TODO: view data GO TO student.class
                         ).appendTo('#studentTable');
                     });
             });
