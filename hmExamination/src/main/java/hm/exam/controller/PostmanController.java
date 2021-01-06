@@ -23,7 +23,7 @@ public class PostmanController {
     public  ResponseEntity<String> create(@ModelAttribute Student studentToCreate){
         Student student = studentRepository.save(studentToCreate);
         // ResponseEntity constructor expects parameters as status(), header() and body()
-        return  ResponseEntity.status(201).header("Location","/students/" + student.getId()).body("{'Msg': "+student.getFirstName()+"'student created'}");
+        return  ResponseEntity.status(201).header("Location","/students/" + student.getId()+student.getSupervisor()).body("{'Msg': "+student.getFirstName()+"'student created'}");
     }
     //Read all students
     @GetMapping("/students")

@@ -17,6 +17,6 @@ public class HomeController {
     @GetMapping("/api")
     public String read(){
         return "testAJAX";
-    } //TODO: Show get Method from  API  call
+    } //TODO: Show read() to display Json in HTML
 
 }
