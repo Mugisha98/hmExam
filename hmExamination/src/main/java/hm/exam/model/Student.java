@@ -5,7 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 
 @JsonIgnoreProperties({"supervisor","id"})
-@Entity //Map this class to DB
+@Entity //Map this class to DB via Hibernate
 @Table(name = "Students")
 public class Student {
 
@@ -39,11 +39,11 @@ public class Student {
     public String getEmail() {
         return email;
     }
-    @JsonIgnore
+    @JsonIgnore //ignore the method when student is created
     public Long getSupervisorId() {
         return supervisor.getId();
     } //Used for getting Supervisor id in student Table
-    @JsonIgnore
+    @JsonIgnore //ignore the method when student is created
     public String getSupervisorName(){return supervisor.getFirstName();} //Used for getting name of supervisor in student table
     public Supervisor getSupervisor() {
         return supervisor;

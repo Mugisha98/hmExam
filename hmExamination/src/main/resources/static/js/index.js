@@ -10,3 +10,33 @@ function captcha(){
         return mathQuiz;
     }
 }
+
+/*
+$(document).ready(function() {
+
+    //GET
+    $.ajax({
+        method: "GET",
+        url: 'http://localhost:8080/student/'
+    }).done(
+        function (data) {
+            $('body').append(data.email).append(data.firstName).append(data.lastName)
+        });
+    //POST
+    $.ajax({
+        method: "POST",
+        url:'http://localhost:8080/student/',
+        data: {
+            firstName:'Kiki',
+            lastName:'Lypart',
+            email:'lypart@Mail.com'
+        }
+    }).done(function (data){
+        alert('POST saved'+data)
+    });
+
+});
+*/
+
+
+

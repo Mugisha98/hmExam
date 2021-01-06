@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Programming 2 Exam</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="/css/styles.css"> -->
+    <!-- <script src="/js/index.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+<body>
+<main>
+    <div class="greetingHeader">
+        <h1 style="text-align: center">Welcome to student administration</h1><br>
+    </div>
+        <button id="viewStudentsBtn">Show students</button>
+    <div class="content">
+        <table id="studentTable" border="1">
+            <thead>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Email</th>
+                <th># Supervisor</th>
+            </thead>
+        </table>
+    </div>
+    <div class="card-footer text-muted">
+        <p>Made by with 🖤 by HMTech Inc</p>
+    </div>
+</main>
+<script>
+    $(document).ready(function()
+    {
+        //GET ALL STUDENTS function
+        $('#viewStudentsBtn').click(function ()
+        {
+            $.ajax(
+                {
+                    method: "GET",
+                    url: 'http://localhost:8080/students' //Endpoint
+                }).done(function(data)
+            {
+                $.each(data, function(i, student) {
+                         $('<tr>').append(
+                            $('<td>').text(student.firstName),
+                            $('<td>').text(student.lastName),
+                            $('<td>').text(student.email),
+                            $('<td>').text("#"+student.supervisorId+" "+student.supervisorName),
+                        ).appendTo('#studentTable');
+                    });
+            });
+        })
+
+
+
+    })
+</script>
+</body>
+</html>

@@ -3,7 +3,7 @@ package hm.exam.model;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity //Map this class to DB
+@Entity //Map this class to DB via Hibernate
 @Table(name = "Supervisors")
 public class Supervisor {
 
