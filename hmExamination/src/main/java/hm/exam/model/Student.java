@@ -43,11 +43,11 @@ public class Student {
     public String getEmail() {
         return email;
     }
-    @JsonIgnore //ignore the method when student is serialize & deserialize  TODO: Udkommenter @JsonIgnore med Thymeleaf & Postman
+    @JsonIgnore //ignore the method when student is serialize & deserialize  TODO: Udkommenter @JsonIgnore med Thymeleaf
     public Long getSupervisorId() {
         return supervisor.getId();
     } //Used for getting Supervisor id in student Tab
-    @JsonIgnore //ignore the method when student is serialize & deserialize TODO: Udkommenter @JsonIgnore med Thymeleaf & Postman
+    @JsonIgnore //ignore the method when student is serialize & deserialize TODO: Udkommenter @JsonIgnore med Thymeleaf
     public String getSupervisorName(){return supervisor.getFirstName();} //Used for getting name of supervisor in student table
     public Supervisor getSupervisor() {
         return supervisor;
