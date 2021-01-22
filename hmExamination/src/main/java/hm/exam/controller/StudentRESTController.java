@@ -28,7 +28,7 @@ public class StudentRESTController {
     //Read all students
     @GetMapping("/students")
     public Iterable<Student> index(){
-        return studentRepository.findAll();
+        return studentRepository.findAll()
     }
     //Read one student by id
     @GetMapping("/students/{id}")

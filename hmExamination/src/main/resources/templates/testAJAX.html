@@ -11,16 +11,17 @@
             <div class="greetingHeader">
                 <br><h2>Student overview</h2>
             </div>
-            <div>
+            <div class="container">
                 <button id="viewStudentsBtn" class="btn btn-outline-info">Show students</button>
+                <a href="/supervisor-overview"><button id="viewSupervisorBtn" class="btn btn-outline-info">Show supervisor</button></a>
             </div>
             <div>
                 <table id="studentTable" class="table table-bordered">
-                    <thead>
+                    <thead class="thead-dark">
                         <th>First name</th>
                         <th>Last name</th>
                         <th>Email</th>
-                        <th>Supervisor</th>
+                        <!-- <th>Supervisor</th> -->
                     </thead>
                 </table>
             </div>
@@ -47,8 +48,8 @@
                                  $('<tr>').append(
                                     $('<td>').text(student.firstName),
                                     $('<td>').text(student.lastName),
-                                    $('<td>').text(student.email),
-                                    $('<td>').text("#"+student.supervisorId+" "+student.supervisorName) //TODO: view data GO TO student.class
+                                    $('<td>').text(student.email)
+                                    //$('<td>').text("#"+student.supervisorId+" "+student.supervisorName) //TODO: view data GO TO student.class
                                 ).appendTo('#studentTable');
                             });
                     });
