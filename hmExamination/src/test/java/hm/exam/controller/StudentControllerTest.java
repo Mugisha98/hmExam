@@ -36,7 +36,7 @@ class StudentControllerTest {
 
     @Test
     void createstudent(){
-        Assertions.assertEquals("hej", studentController.createdStudent(student));
+        Assertions.assertEquals("hejjj", studentController.createdStudent(student));
     }
 
 }
