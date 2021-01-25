@@ -9,7 +9,7 @@ public class MainApplication {
     public static void main(String[] args) {
         SpringApplication.run(MainApplication.class, args);
 
-        System.out.println("Wakanda forever");
+        System.out.println("wakanda forver");
     }
 
 }
