@@ -34,4 +34,9 @@ class StudentControllerTest {
         System.out.println("Test completed!");
     }
 
+    @Test
+    void createstudent(){
+        Assertions.assertEquals("hej", studentController.createdStudent(student));
+    }
+
 }
